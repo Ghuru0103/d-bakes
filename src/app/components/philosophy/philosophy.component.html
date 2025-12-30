@@ -1,0 +1,32 @@
+<section class="philosophy" id="our-story">
+  <div class="container">
+    <div class="philosophy-content">
+      <div class="philosophy-text">
+        <span class="section-label">OUR PHILOSOPHY</span>
+        <h2 class="section-title">A Tradition of Taste & Honest Ingredients</h2>
+        <p class="philosophy-description">
+          We believe in using only the finest local ingredients and time-honored family recipes to bring you the best baked goods in town. From our oven to your table, experience the difference of handcrafted quality that you can taste in every bite.
+        </p>
+        
+        <ul class="philosophy-values" @staggerValues>
+          <li class="philosophy-item" *ngFor="let value of values">
+            <span class="check-icon">✓</span>
+            <span>{{ value }}</span>
+          </li>
+        </ul>
+        
+        <button class="story-btn">Read Our Story</button>
+      </div>
+      
+      <div class="philosophy-images">
+        <div class="image-wrapper" *ngFor="let image of philosophyImages; let i = index" [style.animation-delay]="(i * 0.2) + 's'">
+          <img 
+            [src]="image.url" 
+            [alt]="image.alt"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

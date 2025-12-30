@@ -1,0 +1,27 @@
+<section class="menu" id="menu">
+  <div class="container">
+    <div class="menu-header">
+      <span class="section-label">OUR MENU</span>
+      <h2 class="section-title">Fresh From the Oven</h2>
+      <a href="#menu" class="view-all-link">View Full Menu →</a>
+    </div>
+    
+    <div class="menu-grid" @staggerMenuItems>
+      <div class="menu-item" 
+           *ngFor="let item of menuItems; let i = index"
+           [@menuItemHover]="'normal'"
+           (mouseenter)="item.hoverState = 'hover'"
+           (mouseleave)="item.hoverState = 'normal'"
+           [style.animation-delay]="(i * 0.15) + 's'">
+        <div class="menu-image">
+          <img [src]="item.image" [alt]="item.title" loading="lazy">
+          <span class="price-tag">{{ item.price }}</span>
+        </div>
+        <div class="menu-content">
+          <h3 class="menu-title">{{ item.title }}</h3>
+          <p class="menu-description">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

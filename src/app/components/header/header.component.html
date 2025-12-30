@@ -1,0 +1,31 @@
+<header class="header" [class.scrolled]="isScrolled" @fadeInDown>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <div class="logo-icon">
+          <img src="logo.jpg" alt="D Bakes Logo" (error)="onImageError($event)">
+        </div>
+        <span class="logo-text">D Bakes</span>
+      </div>
+      
+      <nav class="nav" [class.mobile-open]="isMobileMenuOpen" @navItem>
+        <a href="#home" (click)="closeMobileMenu()">Home</a>
+        <a href="#menu" (click)="closeMobileMenu()">Menu</a>
+        <a href="#our-story" (click)="closeMobileMenu()">Our Story</a>
+        <a href="#gallery" (click)="closeMobileMenu()">Gallery</a>
+        <a href="#contact" (click)="closeMobileMenu()">Contact</a>
+      </nav>
+      
+      <button class="visit-btn" @slideIn>Visit Us</button>
+      
+      <button class="mobile-menu-toggle" 
+              (click)="toggleMobileMenu()" 
+              [class.active]="isMobileMenuOpen"
+              [attr.aria-label]="isMobileMenuOpen ? 'Close menu' : 'Open menu'">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,27 +1,143 @@
-# DBakes
+# D Bakes - Angular Bakery Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+A beautiful, modern, and interactive Angular application for a bakery with smooth animations, pink-themed design, and Instagram integration.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- 🎨 **Modern Design** - Clean, responsive design with pink theme matching the logo
+- ✨ **Interactive Animations** - Smooth scroll animations, hover effects, and transitions
+- 📸 **Gallery Section** - Image gallery with lightbox using Unsplash images
+- 📱 **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile devices
+- 🎯 **Smooth Navigation** - Fixed header with smooth scrolling to sections
+- 📧 **Newsletter Signup** - Email subscription form with validation
+- 🖼️ **Image Management** - Images hosted on Cloudinary CDN
+- 💖 **Pink Theme** - Beautiful pink color scheme (#EC4899) throughout the app
+- 📱 **Instagram Integration** - Direct links to Instagram for ordering
 
-## Code scaffolding
+## Sections
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Header** - Fixed navigation with logo and mobile menu
+2. **Hero** - Eye-catching hero section with call-to-action buttons
+3. **Menu** - Product showcase with animated cards
+4. **Philosophy** - Brand story and values section
+5. **Gallery** - Image gallery with lightbox (supports Cloudinary)
+6. **Newsletter** - Email subscription section
+7. **Footer** - Contact information and links
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- Angular CLI (v18 or higher)
+
+### Installation
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the development server:
+```bash
+ng serve
+```
+
+3. Open your browser and navigate to `http://localhost:4200`
+
+## Image Hosting
+
+Images are currently hosted on Cloudinary CDN. The app uses direct Cloudinary URLs for:
+- Menu item images
+- Philosophy section images
+- Hero section background image
+
+All images are optimized and served via Cloudinary's CDN for fast loading.
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── header/          # Navigation header
+│   │   ├── hero/            # Hero section
+│   │   ├── menu/            # Menu/products section
+│   │   ├── philosophy/      # Philosophy section
+│   │   ├── gallery/         # Gallery with Cloudinary support
+│   │   ├── newsletter/      # Newsletter signup
+│   │   └── footer/          # Footer section
+│   ├── services/
+│   │   └── cloudinary.service.ts  # Cloudinary integration service
+│   └── app.component.*      # Main app component
+├── styles.scss              # Global styles
+└── index.html              # Main HTML file
+```
+
+## Animations
+
+The app uses Angular Animations for smooth, interactive effects:
+
+- **Fade In** - Elements fade in on scroll
+- **Slide In** - Elements slide in from different directions
+- **Stagger** - Sequential animations for lists
+- **Hover Effects** - Interactive hover animations
+- **Lightbox** - Smooth image lightbox transitions
+
+## Customization
+
+### Colors
+
+The app uses a pink theme matching the D Bakes logo. Update CSS variables in `src/styles.scss`:
+
+```scss
+:root {
+  --primary-pink: #EC4899;
+  --primary-pink-light: #F472B6;
+  --primary-pink-dark: #DB2777;
+  --dark-gray: #1F2937;
+  --light-gray: #6B7280;
+  --light-pink: #FDF2F8;
+  // ... more variables
+}
+```
+
+### Images
+
+- **Menu Images**: Cloudinary URLs in `src/app/components/menu/menu.component.ts`
+- **Philosophy Images**: Cloudinary URLs in `src/app/components/philosophy/philosophy.component.ts`
+- **Hero Image**: Cloudinary URL in `src/app/components/hero/hero.component.html`
+- **Gallery Images**: Unsplash placeholder images in `src/app/components/gallery/gallery.component.ts`
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+# Development build
+ng build
 
-## Running unit tests
+# Production build
+ng build --configuration production
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Technologies Used
 
-## Running end-to-end tests
+- Angular 18
+- TypeScript
+- SCSS
+- Angular Animations
+- Cloudinary (optional)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Browser Support
 
-## Further help
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## License
+
+This project is open source and available for use.
+
+## Support
+
+For issues or questions, please open an issue in the repository.

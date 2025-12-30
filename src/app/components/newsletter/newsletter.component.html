@@ -1,0 +1,32 @@
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter-content">
+      <div class="newsletter-icon">✉</div>
+      <h2 class="newsletter-title">Join Our Sweet Community</h2>
+      <p class="newsletter-description">
+        Subscribe to get news about seasonal specials, exclusive offers, and baking tips delivered straight to your inbox.
+      </p>
+      
+      <form class="newsletter-form" (ngSubmit)="onSubmit()" [class.shake]="showError">
+        <input 
+          type="email" 
+          class="newsletter-input" 
+          placeholder="Enter your email address"
+          [(ngModel)]="email"
+          name="email"
+          required
+        >
+        <button type="submit" class="newsletter-btn" [disabled]="submitted">
+          {{ submitted ? 'Subscribed!' : 'Subscribe' }}
+        </button>
+      </form>
+      
+      <p class="newsletter-message" *ngIf="submitted">
+        Thank you for subscribing! 🎉
+      </p>
+      <p class="newsletter-error" *ngIf="showError && !submitted">
+        Please enter a valid email address.
+      </p>
+    </div>
+  </div>
+</section>

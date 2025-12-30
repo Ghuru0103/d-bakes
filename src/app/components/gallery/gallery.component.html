@@ -1,0 +1,37 @@
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="gallery-header">
+      <span class="section-label">OUR GALLERY</span>
+      <h2 class="section-title">Sweet Moments Captured</h2>
+      <p class="section-description">A glimpse into our daily baking journey</p>
+    </div>
+
+    <div class="gallery-grid" @staggerGallery>
+      <div 
+        class="gallery-item" 
+        *ngFor="let image of images; let i = index"
+        (click)="openLightbox(image)"
+      >
+        <div class="gallery-image-wrapper">
+          <img [src]="image" [alt]="'Gallery image ' + (i + 1)" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="view-icon">👁</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div 
+    class="lightbox" 
+    *ngIf="selectedImage" 
+    (click)="closeLightbox()"
+    @lightbox
+  >
+    <div class="lightbox-content" (click)="$event.stopPropagation()">
+      <button class="lightbox-close" (click)="closeLightbox()">×</button>
+      <img [src]="selectedImage" alt="Gallery image">
+    </div>
+  </div>
+</section>
